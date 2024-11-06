@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanchan's Analysis | Data Consulting Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: #1A237E;
+            color: white;
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-container h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 36px; /* Increased font size */
+            font-weight: 700; /* Bolder weight for prominence */
+            color: #FFB300;
+            margin: 0; /* Remove default margin */
+        }
+
+        .nav-container ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+        }
+
+        .nav-container li {
+            font-weight: 500;
+        }
+
+        .nav-container a {
+            color: #FFF;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-container a:hover {
+            color: #FFB300;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 35, 126, 0.6), rgba(26, 35, 126, 0.6)), url('your-hero-image.jpg') no-repeat center center/cover;
+            color: white;
+            height: 250px; /* Reduced height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px; /* Reduced padding */
+            position: relative;
+        }
+
+        .hero h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 36px; /* Increased font size */
+            font-weight: 700;
+            margin-bottom: 10px; /* Adjusted margin */
+        }
+
+        .hero p {
+            font-size: 24px; /* Increased font size for better visibility */
+            font-weight: 300;
+            margin-bottom: 15px; /* Reduced margin */
+        }
+
+        .cta-button {
+            background-color: #FFB300;
+            color: #1A237E;
+            padding: 12px 25px; /* Increased padding */
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 20px; /* Increased font size */
+            font-weight: 500;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #FFD54F;
+        }
+
+        /* Services Section */
+        #services {
+            padding: 60px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        #services h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 34px;
+            font-weight: 600;
+            color: #1A237E;
+            margin-bottom: 30px;
+        }
+
+        .service-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            display: flex;
+            align-items: flex-start;
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            border-left: 5px solid #FFB300;
+        }
+
+        .service-content {
+            flex-grow: 1;
+        }
+
+        .service-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            color: #1A237E;
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: #555;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            padding: 60px 20px;
+            background-color: #fafafa;
+            text-align: center;
+        }
+
+        #portfolio h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 34px;
+            font-weight: 600;
+            color: #1A237E;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-container {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            text-align: left;
+            border-top: 4px solid #FFB300;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-item h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            color: #1A237E;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-item p {
+            font-size: 15px;
+            color: #555;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1A237E;
+            color: #FFB300;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        footer a {
+            color: #FFB300;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #FFD54F;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+            <h1>Kanchan's Data Intelligence</h1>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-text">
+            <h2>Empowering Data, Empowering Decisions</h2>
+            <p>Insightful data solutions tailored for your success.</p>
+            <a href="#contact" class="cta-button">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service-card">
+                <div class="service-content">
+                    <h3>Data Science</h3>
+                    <p>We offer comprehensive machine learning models, predictive analytics, and statistical methods to help businesses anticipate trends, optimize operations, and enhance customer engagement. Our expertise allows you to unlock the full potential of your data, driving informed decision-making and strategic growth.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-content">
+                    <h3>Data Analysis</h3>
+                    <p>Our data analysis services provide detailed insights from data collection, cleansing, and in-depth analysis that reveal critical business trends. We support informed decisions and enhance productivity by transforming raw data into actionable intelligence tailored to your business needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>Project Portfolio</h2>
+        <div class="portfolio-container">
+            <div class="portfolio-item">
+                <h4>Customer Retention Model</h4>
+                <p>A predictive model designed to enhance customer retention strategies for e-commerce platforms, utilizing machine learning techniques to identify at-risk customers and tailor engagement efforts effectively.</p>
+                <a href="C:/Users/Kanchan/Downloads/Company/Customer_churn_report.html">View Project</a>
+            </div>
+            <div class="portfolio-item">
+                <h4>Sales Trend Analysis</h4>
+                <p>This project involved comprehensive retail data analysis that helped identify sales trends, customer purchasing behaviors, and provided insights for developing effective growth strategies for various products.</p>
+                <a href="C:/Users/Kanchan/Downloads/Company/DataAnalysisProject.html">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>Contact us: <a href="mailto:kanchan.sawant99@gmail.com">kanchan.sawant99@gmail.com</a></p>
+        <p>Follow us on <a href="#">LinkedIn</a></p>
+        <p>&copy; 2024 Kanchan's Analysis</p>
+    </footer>
+</body>
+
+</html>

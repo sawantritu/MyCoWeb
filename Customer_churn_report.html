@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Analysis Report</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff; /* White background for clarity */
+            color: #333; /* Dark text color */
+        }
+        header {
+            background-color: #003366; /* Dark Royal Blue */
+            color: #ffffff; /* White for contrast */
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #ffcc00; /* Gold border */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em; /* Title font size */
+            color: #ffcc00; /* Gold for title */
+        }
+        header h2 {
+            margin: 10px 0 0 0; /* Space under title */
+            font-size: 1.5em; /* Subtitle font size */
+            color: #ffffff; /* White for subtitle */
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center; /* Center navigation */
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #ff9900; /* Bright Mango color for links */
+            font-weight: bold;
+            transition: color 0.3s; /* Smooth transition */
+        }
+        nav ul li a:hover {
+            color: #ffcc00; /* Gold hover effect */
+        }
+        h1, h2, h3 {
+            color: #003366; /* Dark Royal Blue for headings */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #ffcc00; /* Gold border for images */
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 15px;
+            background-color: #003366; /* Dark Royal Blue */
+            color: #ffffff; /* White for contrast */
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #ffffff; /* White background for sections */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        p {
+            line-height: 1.6; /* Increased line height for readability */
+        }
+        ul {
+            margin: 0;
+            padding-left: 20px; /* Indent unordered lists */
+        }
+        pre {
+            background-color: #f4f4f4; /* Light grey background for code */
+            padding: 10px;
+            border-radius: 4px; /* Rounded corners for preformatted text */
+            overflow-x: auto; /* Allow horizontal scrolling */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Customer Churn Analysis Report</h1>
+    <h2>A Comprehensive Analysis of Customer Retention Strategies</h2>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#objectives">Objectives</a></li>
+        <li><a href="#data-cleaning">Data Cleaning</a></li>
+        <li><a href="#feature-engineering">Feature Engineering</a></li>
+        <li><a href="#eda">Exploratory Data Analysis</a></li>
+        <li><a href="#modeling">Modeling</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#future-work">Future Work</a></li>
+    </ul>
+</nav>
+
+<div class="section" id="introduction">
+    <h2>Introduction</h2>
+    <p>Customer churn, the loss of clients or customers, is a critical issue in the telecommunications industry. This report aims to analyze customer churn patterns, identify factors contributing to churn, and develop a predictive model to assist the company in retaining customers. By leveraging data analysis techniques, we can derive actionable insights that can significantly enhance customer retention strategies.</p>
+</div>
+
+<div class="section" id="objectives">
+    <h2>Objectives</h2>
+    <ul>
+        <li>To analyze customer data and understand patterns in churn behavior.</li>
+        <li>To identify key features that influence customer churn.</li>
+        <li>To develop a predictive model using machine learning techniques to forecast churn.</li>
+        <li>To recommend strategies for improving customer retention based on the findings.</li>
+    </ul>
+</div>
+
+<div class="section" id="data-cleaning">
+    <h2>Data Cleaning</h2>
+    <p>The first step in the analysis involved cleaning the dataset to ensure high-quality input for the modeling process. Irrelevant columns, such as <strong>customerID</strong>, were removed to simplify the dataset. Additionally, the <strong>TotalCharges</strong> column, which contained missing values, was converted to a numeric format, and missing entries were replaced with the median value. This preprocessing step is vital for maintaining the integrity of the analysis and ensuring accurate model predictions.</p>
+</div>
+
+<div class="section" id="feature-engineering">
+    <h2>Feature Engineering</h2>
+    <p>Feature engineering is the process of using domain knowledge to create new input features that make machine learning algorithms work better. In this project, we created a new categorical feature, <strong>tenure_group</strong>, which groups customer tenure into bins. This helps in understanding how customer loyalty changes over time and facilitates better predictions based on customer lifespan.</p>
+</div>
+
+<div class="section" id="eda">
+    <h2>Exploratory Data Analysis (EDA)</h2>
+
+    <h3>Churn Distribution</h3>
+    <p>The first visualization shows the overall distribution of churn within the customer base:</p>
+    <img src="churn_distribution.png" alt="Churn Distribution">
+    <p>This chart illustrates the proportion of customers who have churned (Yes) versus those who have not (No). A significant number of churned customers can indicate potential issues with service quality or customer satisfaction that need to be addressed.</p>
+
+    <h3>Feature Distributions</h3>
+    <p>Next, we analyze the distributions of numerical features that may affect churn:</p>
+
+    <h4>Tenure Distribution</h4>
+    <img src="tenure_distribution.png" alt="Tenure Distribution">
+    <p>The tenure distribution shows how long customers have been with the company. A noticeable concentration of customers with short tenure suggests that the company may need to focus on enhancing the onboarding experience and customer satisfaction early in the relationship.</p>
+
+    <h4>Monthly Charges Distribution</h4>
+    <img src="monthlycharges_distribution.png" alt="Monthly Charges Distribution">
+    <p>This histogram illustrates the distribution of monthly charges among customers. The analysis reveals that many customers are paying lower monthly charges, which could indicate price sensitivity. It’s essential to evaluate if the pricing strategy aligns with customer expectations and market standards.</p>
+
+    <h4>Total Charges Distribution</h4>
+    <img src="totalcharges_distribution.png" alt="Total Charges Distribution">
+    <p>This plot visualizes the total charges incurred by customers. Understanding the distribution of total charges can help the company assess which customer segments contribute most to revenue and identify those that may be at risk of churning due to high costs.</p>
+
+    <h3>Relationship with Churn</h3>
+    <p>We also explore categorical features and their relationships with churn:</p>
+    <img src="categorical_feature_relationship.png" alt="Categorical Feature Relationships">
+    <p>This visualization depicts how different categorical variables, such as payment methods or contract types, correlate with churn rates. Identifying patterns here can highlight specific groups of customers that are more likely to leave, allowing for targeted retention efforts.</p>
+</div>
+
+<div class="section" id="modeling">
+    <h2>Modeling</h2>
+    <p>For predictive modeling, a Random Forest Classifier was selected due to its robustness and ability to handle both numerical and categorical data. The model was trained on a training dataset, with the remaining data reserved for testing. This approach helps in assessing the model's ability to generalize to unseen data.</p>
+</div>
+
+<div class="section" id="results">
+    <h2>Results</h2>
+    <p>The Random Forest model achieved an impressive accuracy of <strong>80.27%</strong> on the test dataset. The following confusion matrix illustrates the performance of the model:</p>
+    <img src="confusion_matrix.png" alt="Confusion Matrix">
+    <p>The confusion matrix indicates that the model correctly identified a high percentage of churned customers, highlighting its effectiveness in predicting customer behavior.</p>
+    <pre>
+    [[951  85]
+     [193 180]]
+    </pre>
+    <p>This matrix shows:</p>
+    <ul>
+        <li><strong>True Positives (TP)</>: 180 - Customers correctly predicted to churn.</li>
+        <li><strong>True Negatives (TN)</>: 951 - Customers correctly predicted not to churn.</li>
+        <li><strong>False Positives (FP)</>: 85 - Customers incorrectly predicted to churn.</li>
+        <li><strong>False Negatives (FN)</>: 193 - Customers incorrectly predicted not to churn.</li>
+    </ul>
+    <p>The accuracy of the model is calculated as:</p>
+    <p><strong>Accuracy = (TP + TN) / (TP + TN + FP + FN) = (180 + 951) / (180 + 951 + 85 + 193) ≈ 80.27%</strong></p>
+    <p>A high number of true positives indicates that the model effectively identifies customers who are likely to churn, while a low number of false positives is critical for reducing unnecessary retention costs.</p>
+</div>
+
+<div class="section" id="conclusion">
+    <h2>Conclusion</h2>
+    <p>In conclusion, this analysis provides valuable insights into customer churn behavior. By identifying key features influencing churn, the company can implement targeted retention strategies. The predictive model developed in this report serves as a tool for anticipating customer churn and enhancing customer relationship management.</p>
+</div>
+
+<div class="section" id="future-work">
+    <h2>Future Work</h2>
+    <p>Future analyses could incorporate additional features, such as customer feedback and external market conditions, to further enhance prediction accuracy. Additionally, implementing a customer feedback loop could provide ongoing insights into customer satisfaction and service improvements.</p>
+</div>
+
+<footer>
+    <p>&copy; 2024 Customer Churn Analysis Team. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
